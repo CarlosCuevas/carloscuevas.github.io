@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>Carlos Cuevas</title>
+  <title>Because carloscuevas.com was too expensive</title>
   <meta name="description" content="Carlos Cuevas">
   <meta name="author" content="Carlos Cuevas">
 
@@ -20,8 +20,40 @@
 
   <link rel="icon" type="image/png" href="images/favicon.png">
 
+
 </head>
 <body>
+  <!-- parallax -->
+  <div
+    class="parallax-image-wrapper parallax-image-wrapper-100"
+    data-anchor-target="#header"
+    data-bottom-top="transform:translate3d(0px, 200%, 0px)"
+    data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+
+    <div
+      id="header-parallax"
+      class="parallax-image parallax-image-100"
+      data-anchor-target="#header"
+      data-bottom-top="transform: translate3d(0px, -80%, 0px);"
+      data-top-bottom="transform: translate3d(0px, 80%, 0px);"
+    ></div>
+  </div>
+
+  <div
+    class="parallax-image-wrapper parallax-image-wrapper-50"
+    data-anchor-target="#summary + #second-parallax-target"
+    data-bottom-top="transform:translate3d(0px, 300%, 0px)"
+    data-top-bottom="transform:translate3d(0px, 0%, 0px)">
+    <div
+      id="second-parallax"
+      class="parallax-image parallax-image-50"
+      data-anchor-target="#summary + #second-parallax-target"
+      data-bottom-top="transform: translate3d(0px, -60%, 0px);"
+      data-top-bottom="transform: translate3d(0px, 60%, 0px);"
+    ></div>
+  </div>
+
+  <!-- body -->
   <div id="skrollr-body">
     <div class="gap gap-100" id="header">
       <div class="container" id="headerTextContainer">
@@ -78,7 +110,7 @@
       </div>
     </div>
     <div class="gap gap-50" id="second-parallax-target"></div>
-    <div class="content" id="projects">
+    <div class="content" id="resume">
       <div class="container">
         <div class="row">
           <h4>
@@ -109,10 +141,16 @@
     </div>
   </div>
   <div id="footer">
-    <div class="container">
-      <span title="Because carloscuevas.com was too expensive">charlescaves.com</span>
-    </div>
+      <div class="container">
+        charlescaves.com
+      </div>
   </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+  <script type="text/javascript">
+    skrollr.init({
+      smoothScrolling: false
+    });
+  </script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

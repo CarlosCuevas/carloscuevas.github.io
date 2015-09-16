@@ -30,7 +30,7 @@ html, body {
     height:100% !important;
 }
 
-/*.parallax-image-wrapper {
+.parallax-image-wrapper {
     position:fixed;
     left:0;
     width:100%;
@@ -74,7 +74,7 @@ html, body {
 
 .no-skrollr .parallax-image-wrapper {
     display:none !important;
-}*/
+}
 
 #skrollr-body {
     height:100%;
@@ -105,12 +105,6 @@ html, body {
     -moz-box-sizing:border-box;
     box-sizing:border-box;
 }
-
-/*#footer {
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-}*/
 
 .content-full {
     min-height:100%;
