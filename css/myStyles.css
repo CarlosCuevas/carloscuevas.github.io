@@ -1,0 +1,42 @@
+#headerTextDiv {
+    color: #FFF;
+    background: rgba(44,62,80,0.5);
+    border-radius:5px;
+    padding: 0 0 0 1em;
+}
+
+#footer {
+    background: #2C3E50;
+    color: #FFF;
+}
+
+#projects {
+    margin-top: 25px;
+}
+
+#links {
+    text-align: center;
+}
+
+#headerTextContainer {
+    top: 20%;
+}
+
+/*Override some of Skeleton's CSS*/
+body {
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: #2C3E50;
+}
+
+a:hover {
+    color: #4183D7;
+}
+
+h4 {
+    color: #4183D7;
+}
