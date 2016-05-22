@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){var e=["bridge.jpg","bridge2.jpg","lights.jpg","frontSt.jpg","courtSt.jpg"],t=document.querySelector("#header-section");t.style.backgroundImage="url(images/"+e[Math.floor(Math.random()*e.length)]+")"});
