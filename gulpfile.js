@@ -3,6 +3,8 @@ const minifyCss = require('gulp-minify-css');
 const minifyHTML = require('gulp-minify-html');
 const concatCss = require('gulp-concat-css');
 const uglify = require('gulp-uglify');
+const cache = require('gulp-cache');
+const imagemin = require('gulp-imagemin');
 const pump = require('pump');
 const livereload = require('gulp-livereload');
 const gutil = require('gulp-util');
@@ -13,7 +15,8 @@ gulp.task('critical', ['css'], () => {
         .pipe(critical({
             base: './src/',
             inline: true,
-            css: './src/css/myStyles.css'
+            css: './src/css/myStyles.css',
+            minify: true
         }))
         .on('error', (err) => gutil.log(gutil.colors.red(err.message)))
         .pipe(minifyHTML())
@@ -36,7 +39,17 @@ gulp.task('js', (cb) => {
     ], cb);
 });
 
-gulp.task('build', ['critical', 'js']);
+gulp.task('images', function () {
+    return gulp.src('./src/images/*')
+        .pipe(cache(imagemin({
+            optimizationLevel: 3,
+            progressive: true,
+            interlaced: true
+        })))
+        .pipe(gulp.dest('./images'))
+});
+
+gulp.task('build', ['critical', 'js', 'images']);
 
 gulp.task('watch', () => {
     livereload.listen();
