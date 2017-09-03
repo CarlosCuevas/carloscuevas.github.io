@@ -1,42 +1,47 @@
-var gulp = require('gulp');
-var minifyCss = require('gulp-minify-css');
-var minifyHTML = require('gulp-minify-html');
-var concatCss = require('gulp-concat-css');
-var uglify = require('gulp-uglify');
-var pump = require('pump');
-var livereload = require('gulp-livereload');
+const gulp = require('gulp');
+const minifyCss = require('gulp-minify-css');
+const minifyHTML = require('gulp-minify-html');
+const concatCss = require('gulp-concat-css');
+const uglify = require('gulp-uglify');
+const pump = require('pump');
+const livereload = require('gulp-livereload');
+const gutil = require('gulp-util');
+const critical = require('critical').stream;
 
-gulp.task('css', function () {
-    return gulp.src('./src/css/*.css')
-        .pipe(concatCss('bundle.min.css'))
-        .pipe(minifyCss({compatibility: 'ie8'}))
-        .pipe(gulp.dest('./css/'))
-        .pipe(livereload());
-});
-
-gulp.task('html', function() {
-    return gulp.src('./src/index.html')
+gulp.task('critical', ['css'], () => {
+    return gulp.src('./src/*.html')
+        .pipe(critical({
+            base: './src/',
+            inline: true,
+            css: './src/css/myStyles.css'
+        }))
+        .on('error', (err) => gutil.log(gutil.colors.red(err.message)))
         .pipe(minifyHTML())
         .pipe(gulp.dest('./'))
         .pipe(livereload());
 });
 
-gulp.task('js', function (cb) {
+gulp.task('css', () => {
+    return gulp.src('./src/css/*.css')
+        .pipe(concatCss('bundle.min.css'))
+        .pipe(minifyCss({compatibility: 'ie8'}))
+        .pipe(gulp.dest('./css/'))
+});
+
+gulp.task('js', (cb) => {
   pump([
         gulp.src('src/js/*.js'),
         uglify(),
         gulp.dest('./js')
-    ],
-    cb
-  );
+    ], cb);
 });
 
-gulp.task('build', ['css', 'html', 'js']);
+gulp.task('build', ['critical', 'js']);
 
-gulp.task('watch', function () {
+gulp.task('watch', () => {
     livereload.listen();
-    gulp.watch('./src/css/*.css', ['css']);
-    gulp.watch('./src/*.html', ['html']);
+    gulp.watch('./src/css/*.css', ['critical']);
+    gulp.watch('./src/*.html', ['critical']);
     gulp.watch('./src/js/*.js', ['js']);
 });
 
