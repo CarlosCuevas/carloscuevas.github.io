@@ -1,31 +1,47 @@
 {
-  "name": "carloscuevas.github.io",
-  "version": "1.0.0",
-  "description": "Carlos Cuevas' personal site",
-  "main": "index.js",
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "gatsby": "^2.3.16",
+    "gatsby-image": "^2.0.37",
+    "gatsby-plugin-manifest": "^2.0.28",
+    "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-source-filesystem": "^2.0.29",
+    "gatsby-transformer-sharp": "^2.1.17",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.0",
+    "react-icons": "^3.5.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "prettier": "^1.16.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/CarlosCuevas/carloscuevas.github.io.git"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
-  "author": "Carlos Cuevas",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CarlosCuevas/carloscuevas.github.io/issues"
-  },
-  "homepage": "https://github.com/CarlosCuevas/carloscuevas.github.io#readme",
-  "devDependencies": {
-    "critical": "^0.9.0",
-    "gulp": "^3.9.0",
-    "gulp-cache": "^0.4.6",
-    "gulp-concat-css": "^2.2.0",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-livereload": "^3.8.0",
-    "gulp-minify-css": "^1.2.1",
-    "gulp-minify-html": "^1.0.4",
-    "gulp-uglify": "^1.5.3",
-    "pump": "^1.0.2"
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
