@@ -8,8 +8,17 @@
     <style>
         body {
             font-family: Rubik, sans-serif;
-            color: #2f2f2f;
-            background: #fdfdfd
+            color: #0C2340;
+            background: #fdfdfd;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(
+                to top,
+                #F0F0F0 0%,
+                #F0F0F0 58%,
+                #0C2340 58%,
+                #0C2340 100%
+            );
         }
 
         p {
@@ -22,15 +31,14 @@
         }
 
         a, a:visited {
-            color: #2f2f2f;
+            color: #0C2340;
         }
 
         a:hover {
-            color: #006BB6
+            color: #F58426
         }
 
         #main {
-            font-weight: bold;
             position: absolute;
             left: 50%;
             top: 50%;
@@ -39,8 +47,35 @@
         }
 
         #name {
-            font-size: 3em;
+            font-size: 3rem;
             margin-block: 0;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-weight: bold;
+        }
+        
+        #my-pic {
+            height: 280px;
+            width: 280px;
+            border-radius: 50%;
+        }
+    
+        #my-pic-container {
+            position: relative;
+            height: 280px;
+            width: 280px;
+            margin: 0 auto;
+        }
+
+        #my-pic-container:after {
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 280px;
+            width: 280px;
+            content: '';
+            box-shadow: inset 3px 2px 1em #000000;
         }
 
         #icon-links {
@@ -48,7 +83,9 @@
             font-size: 3em;
         }
     </style>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" integrity="sha512-d0olNN35C6VLiulAobxYHZiXJmq+vl+BGIgAxQtD5+kqudro/xNMvv2yIHAciGHpExsIbKX3iLg+0B6d0k4+ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css" integrity="sha512-pZlKGs7nEqF4zoG0egeK167l6yovsuL8ap30d07kA5AJUq+WysFlQ02DLXAmN3n0+H3JVz5ni8SJZnrOaYXWBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -59,6 +96,9 @@
 </head>
   <body>
       <div id="main">
+        <div id="my-pic-container">
+            <img id="my-pic" src="headshot.jpg">
+        </div>  
         <p id="name">Carlos Cuevas</p>
         <span id="icon-links">
             <a href='https://www.linkedin.com/in/carloscuevasnyc' alt='Linkedin'><i class='fa-brands fa-linkedin'></i></a>
